@@ -1,0 +1,26 @@
+
+//pluginManagement {
+//    repositories {
+//        google()
+//        mavenCentral()
+//        gradlePluginPortal()
+//        maven { url "https://jitpack.io" }
+//    }
+//}
+//buildscript {
+//    ext {
+//        kotlin_version = '1.8.20'
+//    }
+//}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url "https://android-sdk.tapdaq.com" }
+    }
+}
+rootProject.name = "RowingBG Achievements"
+include ':app'

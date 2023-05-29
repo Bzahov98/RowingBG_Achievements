@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "713766911470",
+    "project_id": "rowingbg-achievements",
+    "storage_bucket": "rowingbg-achievements.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713766911470:android:a068c3d50335643fcba2ff",
+        "android_client_info": {
+          "package_name": "com.bzahov.rowingbg.achievements"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713766911470-ikrud3v2ome50ace2sq0kdhc21goqki6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-9lipUETgeTbeXFQG4vzfEFlA6p8I0dI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713766911470-ikrud3v2ome50ace2sq0kdhc21goqki6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RowingBG Achievements</string>
+    <string name="title_home">Feed</string>
+    <string name="navigation_2">Calendar</string>
+    <string name="navigation_3">Achievements</string>
+    <string name="navigation_4">My Club</string>
+    <string name="navigation_5">Profile</string>
+</resources>
