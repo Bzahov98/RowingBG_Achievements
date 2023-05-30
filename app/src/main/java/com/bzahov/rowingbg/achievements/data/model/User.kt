@@ -1,7 +1,7 @@
 package com.bzahov.rowingbg.achievements.data.model
 
+import com.google.firebase.database.Exclude
 import com.google.firebase.database.IgnoreExtraProperties
-import com.google.firebase.firestore.Exclude
 
 @IgnoreExtraProperties
 class User  {
