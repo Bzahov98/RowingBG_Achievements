@@ -1,4 +1,4 @@
-package com.bzahov.rowingbg.achievements.ui.activities.main.auth
+package com.bzahov.rowingbg.achievements.ui.activities.auth
 
 import android.content.Intent
 import android.view.View
@@ -71,12 +71,17 @@ class AuthViewModel(
 //        }
 //    }
 //
-//    fun goToLogin(view: View) {
-//        Intent(view.context, LoginActivity::class.java).also {
-//            view.context.startActivity(it)
-//        }
-//    }
+    fun goToLogin(view: View) {
+        Intent(view.context, LoginActivity::class.java).also {
+            view.context.startActivity(it)
+        }
+    }
 
+    fun goToSignup(view: View) {
+        Intent(view.context, SignUpActivity::class.java).also {
+            view.context.startActivity(it)
+        }
+    }
 
     //disposing the disposables
     override fun onCleared() {

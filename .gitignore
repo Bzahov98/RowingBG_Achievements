@@ -7,6 +7,9 @@
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
+/.idea/jarRepositories.xml
+/.idea/vcs.xml
+/.idea/bzaho.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build

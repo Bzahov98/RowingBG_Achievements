@@ -1,4 +1,4 @@
-package com.bzahov.rowingbg.achievements.ui.home
+package com.bzahov.rowingbg.achievements.ui.fragments.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

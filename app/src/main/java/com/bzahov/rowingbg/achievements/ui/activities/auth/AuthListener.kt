@@ -1,4 +1,4 @@
-package com.bzahov.rowingbg.achievements.ui.activities.main.auth
+package com.bzahov.rowingbg.achievements.ui.activities.auth
 
 interface AuthListener {
     fun onStarted()

@@ -7,31 +7,31 @@
 
     <fragment
         android:id="@+id/navigation_feed"
-        android:name="com.bzahov.rowingbg.achievements.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:name="com.bzahov.rowingbg.achievements.ui.fragments.home.HomeFragment"
+        android:label="@string/navigation_text_1"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_calendar"
-        android:name="com.bzahov.rowingbg.achievements.ui.dashboard.DashboardFragment"
-        android:label="@string/navigation_2"
+        android:name="com.bzahov.rowingbg.achievements.ui.fragments.dashboard.DashboardFragment"
+        android:label="@string/navigation_text_2"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_achievements"
-        android:name="com.bzahov.rowingbg.achievements.ui.screens.notifications.NotificationsFragment"
-        android:label="@string/navigation_3"
+        android:name="com.bzahov.rowingbg.achievements.ui.fragments.screens.notifications.NotificationsFragment"
+        android:label="@string/navigation_text_3"
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_club"
-        android:name="com.bzahov.rowingbg.achievements.ui.screens.notifications.NotificationsFragment"
-        android:label="@string/navigation_4"
+        android:name="com.bzahov.rowingbg.achievements.ui.fragments.screens.notifications.NotificationsFragment"
+        android:label="@string/navigation_text_4"
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.bzahov.rowingbg.achievements.ui.screens.notifications.NotificationsFragment"
-        android:label="@string/navigation_5"
+        android:name="com.bzahov.rowingbg.achievements.ui.fragments.screens.notifications.NotificationsFragment"
+        android:label="@string/navigation_text_5"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

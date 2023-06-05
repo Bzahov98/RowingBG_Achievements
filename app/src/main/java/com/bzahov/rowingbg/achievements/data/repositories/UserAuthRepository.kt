@@ -2,14 +2,14 @@ package com.bzahov.rowingbg.achievements.data.repositories
 
 import com.bzahov.rowingbg.achievements.data.firebase.FirebaseAuthDataSource
 import com.bzahov.rowingbg.achievements.data.firebase.FirebaseCloudDataSource
-import com.bzahov.rowingbg.achievements.ui.activities.main.auth.AuthListener
 import com.bzahov.rowingbg.achievements.data.firebase.FirebaseDatabaseDataSource
+import com.bzahov.rowingbg.achievements.ui.activities.auth.AuthListener
 import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class UserAuthRepository(
+class UserAuthRepository constructor(
     private val firebaseAuth: FirebaseAuthDataSource,
     private val firebaseDatabase: FirebaseDatabaseDataSource,
     private val firebaseCloudDataSource: FirebaseCloudDataSource

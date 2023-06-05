@@ -5,14 +5,14 @@ import androidx.lifecycle.ViewModel
 import com.bzahov.rowingbg.achievements.data.repositories.UserAuthRepository
 
 class MainActivityViewModel(
-    private val repository: UserAuthRepository
+     private val repository: UserAuthRepository
 ) : ViewModel() {
 
     val user by lazy {
         repository.currentUser()
     }
 
-    fun logout(view: View){
+    fun logout(view: View) {
         repository.logout()
 //        view.context.startLoginActivity()
     }
