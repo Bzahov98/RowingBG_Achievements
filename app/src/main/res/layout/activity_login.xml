@@ -12,7 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#008577"
+        android:background="@color/background_color"
         android:orientation="vertical"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         tools:context=".ui.activities.auth.LoginActivity">
@@ -58,16 +58,16 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:labelFor="@id/text_email"
-                        android:text="email" />
+                        android:text="@string/auth_email" />
 
                     <EditText
                         android:id="@+id/text_email"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:drawableLeft="@drawable/ic_email"
+                        android:drawableStart="@drawable/ic_email"
                         android:drawablePadding="10dp"
-                        android:hint="ivanIvanov@gmail.com"
+                        android:hint="@string/auth_hint_email"
                         android:inputType="textEmailAddress"
                         android:singleLine="true"
                         android:text="@={viewModel.email}" />
@@ -77,15 +77,15 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:labelFor="@id/edit_text_password"
-                        android:text="password" />
+                        android:text="@string/auth_password" />
 
                     <EditText
                         android:id="@+id/edit_text_password"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_lock"
+                        android:drawableStart="@drawable/ic_lock"
                         android:drawablePadding="10dp"
-                        android:hint="Password"
+                        android:hint="@string/auth_password"
                         android:inputType="textPassword"
                         android:singleLine="true"
                         android:text="@={viewModel.password}" />
@@ -95,22 +95,22 @@
                         android:id="@+id/text_view_forget_password"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="right"
+                        android:layout_gravity="end"
                         android:paddingTop="5dp"
-                        android:text="Forgot Password?" />
+                        android:text="@string/auth_forgot_password" />
 
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/button_sign_in"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="22dp"
                         android:background="#d67601"
                         android:onClick="@{() -> viewModel.login()}"
-                        android:text="Log in"
+                        android:text="@string/auth_log_in"
                         android:textAllCaps="false"
                         android:textColor="#fff"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/button_text_size" />
 
                     <TextView
                         android:id="@+id/text_view_register"
@@ -118,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:onClick="@{(v) -> viewModel.goToSignup(v)}"
-                        android:text="@string/don_t_have_an_account_nregister_here"
+                        android:text="@string/don_t_have_an_account_register_here"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
                 </LinearLayout>

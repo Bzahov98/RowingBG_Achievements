@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.bzahov.rowingbg.achievements.ui.activities.auth.AuthViewModel" />
@@ -58,18 +57,19 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:labelFor="@id/text_email"
-                        android:text="Email" />
+                        android:text="@string/auth_email" />
 
                     <EditText
                         android:id="@+id/text_email"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:drawableLeft="@drawable/ic_email"
+                        android:drawableStart="@drawable/ic_email"
                         android:drawablePadding="10dp"
-                        android:hint="ivanIvanov@gmail.com"
+                        android:hint="@string/auth_hint_email"
                         android:inputType="textEmailAddress"
                         android:singleLine="true"
+                        android:autofillHints="emailAddress"
                         android:text="@={viewModel.email}" />
 
                     <TextView
@@ -83,13 +83,13 @@
                         android:id="@+id/edit_text_password"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_lock"
+                        android:drawableStart="@drawable/ic_lock"
                         android:drawablePadding="10dp"
-                        android:hint="Password"
+                        android:hint="@string/auth_password"
                         android:inputType="textPassword"
                         android:singleLine="true"
-                        android:text="@={viewModel.password}" />
-
+                        android:text="@={viewModel.password}"
+                        android:autofillHints="password" />
 
                     <Button
                         android:id="@+id/button_sign_up"
@@ -98,10 +98,10 @@
                         android:layout_margin="22dp"
                         android:background="#d67601"
                         android:onClick="@{() -> viewModel.signup()}"
-                        android:text="Sign Up"
+                        android:text="@string/auth_sign_up"
                         android:textAllCaps="false"
                         android:textColor="#fff"
-                        android:textSize="18sp" />
+                        android:textSize="@dimen/button_text_size" />
 
                     <TextView
                         android:id="@+id/text_view_register"
@@ -109,7 +109,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:onClick="@{(v) -> viewModel.goToLogin(v)}"
-                        android:text="Already have an account.\nLogin Here"
+                        android:text="@string/auth_already_have_an_account"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
                 </LinearLayout>
