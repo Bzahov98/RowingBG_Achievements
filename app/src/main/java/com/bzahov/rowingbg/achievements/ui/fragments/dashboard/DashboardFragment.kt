@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bzahov.rowingbg.achievements.databinding.FragmentDashboardBinding
+import com.bzahov.rowingbg.achievements.ui.fragments.BaseFragment
 
-class DashboardFragment : Fragment() {
+class DashboardFragment : BaseFragment() {
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private lateinit var binding: FragmentDashboardBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,9 +29,4 @@ class DashboardFragment : Fragment() {
         }
         return root
     }
-
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
 }

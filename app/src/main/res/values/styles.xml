@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="NormalText" parent="android:Widget.TextView">
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:titleMarginTop">6dp</item>
+        <item name="android:titleMarginBottom">6dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+<!--        <item name="fontFamily">sans-serif-light</item>-->
+    </style>
+
+    <style name="NormalTextWithMargins" parent="android:Widget.TextView">
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:titleMarginTop">6dp</item>
+        <item name="android:titleMarginBottom">6dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+<!--        <item name="fontFamily">sans-serif-light</item>-->
+    </style>
+
+    <style name="PrimaryText" parent="NormalText">
+        <!--        <item name="android:textColor">@color/gray90</item>-->
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="PrimaryTextWithMargins" parent="NormalTextWithMargins">
+        <!--        <item name="android:textColor">@color/gray90</item>-->
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="SecondaryTextView" parent="NormalText">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+</resources>

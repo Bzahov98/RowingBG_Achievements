@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.bzahov.rowingbg.achievements.ui.fragments.screens.notifications.NotificationsFragment"
+        android:name="com.bzahov.rowingbg.achievements.ui.fragments.profile.ProfileFragment"
         android:label="@string/navigation_text_5"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_profile" />
 </navigation>

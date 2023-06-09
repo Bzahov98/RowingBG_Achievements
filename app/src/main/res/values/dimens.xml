@@ -3,4 +3,80 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="button_text_size">18sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="item_header_height">100dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="margin_activity_horizontal">16dp</dimen>
+    <dimen name="margin_activity_vertical">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!--    Card Views -->
+    <dimen name="card_rounded_corners">20dp</dimen>
+
+    <!-- Paddings and Margins. -->
+    <dimen name="padding_and_margin_next_day_negative">-4dp</dimen>
+    <dimen name="padding_and_margin_zero">0dp</dimen>
+    <dimen name="padding_and_margin_small">4dp</dimen>
+    <dimen name="padding_and_margin_standard">8dp</dimen>
+    <dimen name="padding_and_margin_timeline_card">10dp</dimen>
+    <dimen name="padding_and_margin_medium">12dp</dimen>
+    <dimen name="padding_and_margin_big">16dp</dimen>
+    <dimen name="padding_and_margin_bigger">20dp</dimen>
+    <dimen name="padding_and_margin_large">24dp</dimen>
+    <dimen name="padding_and_margin_xlarge">36dp</dimen>
+    <dimen name="padding_and_margin_2xlarge">48dp</dimen>
+    <dimen name="padding_and_margin_3xlarge">60dp</dimen>
+    <dimen name="padding_and_margin_4xlarge">72dp</dimen>
+    <dimen name="padding_and_margin_5xlarge">136dp</dimen>
+    <dimen name="padding_and_margin_collapsing_toolbar">48dp</dimen>
+    <dimen name="padding_and_margin_settings">72dp</dimen>
+
+    <!--Text size. -->
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_base">14sp</dimen>
+    <dimen name="text_size_standard">16sp</dimen>
+    <dimen name="text_size_secondary">17sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_expanded_title">24sp</dimen>
+    <dimen name="text_size_big">28sp</dimen>
+    <dimen name="text_size_xlarge">36sp</dimen>
+
+    <!-- Font Sizes -->
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+
+    <!-- Image Sizes -->
+    <dimen name="icon_width_normal">40dp</dimen>
+    <dimen name="icon_height_normal">40dp</dimen>
+    <dimen name="icon_empty">172dp</dimen>
+    <dimen name="small_icon_size">32dp</dimen>
+
+    <!-- Navigation Padding -->
+    <dimen name="padding_and_margin_navigation">54dp</dimen>
+
+    <!-- Bottom Bar -->
+    <dimen name="bottom_bar_size">50dp</dimen>
+
+    <!--bottom lines for edit text-->
+    <dimen name="thin_line">0.25dp</dimen>
+    <dimen name="thick_line">0.5dp</dimen>
+
+    <!-- BottomSheet peek height -->
+    <dimen name="padding_and_margin_bottom_sheet">56dp</dimen>
+
+    <!-- Accessibility -->
+    <dimen name="minimum_touchable_size">48dp</dimen>
+
+   <dimen name="space_bottom">5dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_10">10dp</dimen>
+    <dimen name="elevation_20">20dp</dimen>
+    <dimen name="elevation_30">30dp</dimen>
+
 </resources>

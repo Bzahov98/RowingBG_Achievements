@@ -4,9 +4,9 @@
 
     <data>
 
-        <variable
-            name="viewModel"
-            type="com.bzahov.rowingbg.achievements.ui.activities.auth.AuthViewModel" />
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="com.bzahov.rowingbg.achievements.ui.activities.auth.AuthViewModel" />-->
 
     </data>
 

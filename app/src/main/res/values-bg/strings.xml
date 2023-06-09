@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RowingBg Постижения</string>
+    <string name="navigation_text_1">Дневник</string>
     <string name="navigation_text_2">Календар</string>
     <string name="navigation_text_3">Постижения</string>
     <string name="navigation_text_4">Моят Клуб</string>
     <string name="navigation_text_5">Профил</string>
     <string name="don_t_have_an_account_register_here">Нямате акаунт? Регистрирайте се тук</string>
     <string name="auth_password">Парола</string>
-    <string name="auth_email">Email</string>
-    <string name="auth_forgot_password">Forgot Password?</string>
-    <string name="auth_log_in">Log in</string>
-    <string name="auth_sign_up">Sign Up</string>
-    <string name="auth_already_have_an_account">Already have an account.\nLogin Here</string>
+    <string name="auth_email">Имейл</string>
+    <string name="auth_forgot_password">Забравена Парола?</string>
+    <string name="auth_log_in">Вписване</string>
+    <string name="auth_sign_up">Регистрирай се</string>
+    <string name="auth_already_have_an_account">Имате акаунт? Впишете се тук</string>
+    <string name="user_type_athlete">Състезател</string>
 </resources>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.bzahov.rowingbg.achievements.ui.fragments.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/padding_and_margin_small"
+            app:cardCornerRadius="@dimen/card_rounded_corners"
+            app:cardElevation="@dimen/elevation_30"
+            app:layout_constraintBottom_toTopOf="@id/guidelineHeaderHorizontal"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineCenterVertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="@drawable/logo_bfg"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/profileFirstName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/profileFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@{viewModel.firstName}"
+                    tools:text="Bozhidar"
+                    android:textAppearance="@style/PrimaryTextWithMargins"
+                    app:layout_constraintBottom_toTopOf="@+id/profileLastName"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="@+id/imageView" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/profileLastName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@{viewModel.lastName}"
+                    tools:text="Zahov"
+                    android:textAppearance="@style/PrimaryTextWithMargins"
+                    app:layout_constraintBottom_toTopOf="@+id/profileEmail"
+                    app:layout_constraintEnd_toEndOf="@+id/profileFirstName"
+                    app:layout_constraintStart_toStartOf="@+id/profileFirstName" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/profileEmail"
+                    style="@style/SecondaryTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    tools:text="@string/auth_hint_email"
+                    android:text="@{viewModel.email}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/profileFirstName"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineHeaderHorizontalIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.60" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/headerHorizontalDivider"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/guidelineHeaderHorizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/userDetails"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/padding_and_margin_small"
+            app:cardCornerRadius="@dimen/card_rounded_corners"
+            app:cardElevation="@dimen/elevation_30"
+            app:layout_constraintBottom_toTopOf="@id/guidelineHeaderHorizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/padding_and_margin_medium"
+                android:layout_marginEnd="@dimen/padding_and_margin_small">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/userType"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:drawableStart="@drawable/ic_rowing_20"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:maxLines="1"
+                    android:text="@string/user_type_athlete"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/PrimaryText"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/userTeam"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userType" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/userTeam"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:drawableStart="@drawable/ic_team_20"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:maxLines="1"
+                    android:text="\@NSA"
+                    android:textAppearance="@style/PrimaryText"
+                    app:layout_constraintEnd_toEndOf="@+id/userType"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/userType"
+                    app:layout_constraintTop_toBottomOf="@+id/userType" />
+
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/dividerUserTeam"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userTeam" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/userFavoriteDiscipline"
+                    android:layout_width="0dp"
+                    android:layout_height="57dp"
+                    android:drawableStart="@drawable/ic_award_20"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:maxLines="1"
+                    android:text="LM1x"
+                    android:textAppearance="@style/PrimaryText"
+                    app:layout_constraintEnd_toEndOf="@+id/userTeam"
+                    app:layout_constraintStart_toStartOf="@+id/userTeam"
+                    app:layout_constraintTop_toBottomOf="@+id/userTeam" />
+
+                <!--                <com.google.android.material.textview.MaterialTextView-->
+                <!--                    android:id="@+id/userOther"-->
+                <!--                    style="@style/SecondaryTextView"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="43dp"-->
+                <!--                    android:gravity="center_horizontal"-->
+                <!--                    android:text="@string/auth_hint_email"-->
+                <!--                    android:visibility="gone"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@+id/userTeam"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/userFavoriteDiscipline" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineHeaderHorizontal" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/text_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineCenterVertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHeaderHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="183dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
