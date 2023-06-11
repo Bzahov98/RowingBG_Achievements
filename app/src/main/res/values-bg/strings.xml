@@ -14,4 +14,5 @@
     <string name="auth_sign_up">Регистрирай се</string>
     <string name="auth_already_have_an_account">Имате акаунт? Впишете се тук</string>
     <string name="user_type_athlete">Състезател</string>
+    <string name="profileNavigationProfile">Profile</string>
 </resources>

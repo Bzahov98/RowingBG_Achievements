@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="NormalText" parent="android:Widget.TextView">
+    <style name="NormalText" parent="Widget.MaterialComponents.TextView">
 <!--        <item name="android:layout_width">wrap_content</item>-->
 <!--        <item name="android:layout_height">wrap_content</item>-->
         <item name="android:textSize">@dimen/text_size_normal</item>
@@ -9,13 +9,14 @@
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:titleMarginTop">6dp</item>
+        <item name="android:drawablePadding">10dp</item>
         <item name="android:titleMarginBottom">6dp</item>
         <item name="android:paddingStart">10dp</item>
         <item name="android:paddingEnd">10dp</item>
 <!--        <item name="fontFamily">sans-serif-light</item>-->
     </style>
 
-    <style name="NormalTextWithMargins" parent="android:Widget.TextView">
+    <style name="NormalTextWithMargins" parent="NormalText">
 <!--        <item name="android:layout_width">wrap_content</item>-->
 <!--        <item name="android:layout_height">wrap_content</item>-->
         <item name="android:textSize">@dimen/text_size_normal</item>
@@ -44,6 +45,12 @@
     <style name="SecondaryTextView" parent="NormalText">
         <item name="android:textSize">@dimen/text_size_small</item>
         <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="ProfileCardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:layout_margin">@dimen/padding_and_margin_standard</item>
+        <item name="cardCornerRadius">@dimen/card_rounded_corners</item>
+        <item name="cardElevation">@dimen/elevation_30</item>
     </style>
 
 </resources>

@@ -1,5 +1,7 @@
 package com.bzahov.rowingbg.achievements.ui.fragments.profile
 
+import android.util.Log
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -27,4 +29,12 @@ class ProfileViewModel : ViewModel() {
     val firstName: LiveData<String> = _userFirstName
     val lastName: LiveData<String> = _userLastName
     val email: LiveData<String> = _email
+
+    fun onClick(v : View){
+        Log.e("Profile", (v.id == R.id.goToProfile).toString())
+    }
+
+    fun logOut() {
+        Log.e("Profile", "LogOut")
+    }
 }

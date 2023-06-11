@@ -17,18 +17,25 @@ import org.kodein.di.generic.instance
 class MainActivity : AppCompatActivity(), KodeinAware {
     override val kodein by closestKodein()
     private val factory: MainActivityViewModelFactory by instance()
-    private lateinit var viewModel: MainActivityViewModel
+//    private lateinit var viewModel: MainActivityViewModel
 
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setUpBinding()
+        setUpNavigation()
+    }
+
+    private fun setUpBinding() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewModel = ViewModelProvider(this, factory)[MainActivityViewModel::class.java]
+        binding.viewModel = ViewModelProvider(this, factory)[MainActivityViewModel::class.java]
+        //        binding.viewModel = viewModel
+    }
 
-        binding.viewModel = viewModel
+    private fun setUpNavigation() {
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)

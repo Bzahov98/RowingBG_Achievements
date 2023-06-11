@@ -14,4 +14,11 @@
     <string name="auth_sign_up">Sign Up</string>
     <string name="auth_already_have_an_account">Already have an account.\nLogin Here</string>
     <string name="user_type_athlete">ATHLETE</string>
+
+    <string name="profileNavigationProfile">Profile</string>
+    <string name="profileNavigationSettings">Settings</string>
+    <string name="profileNavigationAdminPanel">Admin Panel</string>
+    <string name="profileNavigationInviteFriends">Invite Friends &amp; Share</string>
+    <string name="profileNavigationRateUs">Rate Us</string>
+    <string name="profileNavigationAbout">About app</string>
 </resources>
