@@ -47,7 +47,7 @@
         <item name="android:textStyle">italic</item>
     </style>
 
-    <style name="ProfileCardView" parent="Widget.Material3.CardView.Elevated">
+    <style name="ProfileCardView" parent="Widget.MaterialComponents.CardView">
         <item name="android:layout_margin">@dimen/padding_and_margin_standard</item>
         <item name="cardCornerRadius">@dimen/card_rounded_corners</item>
         <item name="cardElevation">@dimen/elevation_30</item>

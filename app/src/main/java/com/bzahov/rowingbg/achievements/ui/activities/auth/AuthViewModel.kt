@@ -4,6 +4,8 @@ import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.bzahov.rowingbg.achievements.data.repositories.UserAuthRepository
+import com.bzahov.rowingbg.achievements.utils.InternetBrowserUtils.Companion.openNewTabWindow
+import com.bzahov.rowingbg.achievements.utils.ValidationUtils.Companion.isValidLoginData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -30,8 +32,9 @@ class AuthViewModel(
     //function to perform login
     fun login() {
 
+        trimSpaces()
         //validating email and password
-        if (email.isNullOrEmpty() || password.isNullOrEmpty()) {
+        if (isValidLoginData(email, password)) {
             authListener?.onFailure("Invalid email or password")
             return
         }
@@ -50,8 +53,10 @@ class AuthViewModel(
                 //sending a failure callback
                 authListener?.onFailure(it.message!!)
             })
+
         disposables.add(disposable)
     }
+
 
     //Doing same thing with signup
     fun signup() {
@@ -65,12 +70,6 @@ class AuthViewModel(
         disposables.add(disposable)
     }
 
-//    fun goToSignup(view: View) {
-//        Intent(view.context, SignUpActivity::class.java).also {
-//            view.context.startActivity(it)
-//        }
-//    }
-//
     fun goToLogin(view: View) {
         Intent(view.context, LoginActivity::class.java).also {
             view.context.startActivity(it)
@@ -83,10 +82,18 @@ class AuthViewModel(
         }
     }
 
+    fun trimSpaces() {
+        email?.trim()
+    }
+
     //disposing the disposables
     override fun onCleared() {
         super.onCleared()
         disposables.dispose()
+    }
+
+    fun openRowingBgSite(v: View) {
+        v.context.openNewTabWindow("http://rowingbulgaria.com")
     }
 
 }

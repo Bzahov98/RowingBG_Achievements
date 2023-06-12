@@ -1,14 +1,17 @@
 package com.bzahov.rowingbg.achievements.ui.fragments.profile
 
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bzahov.rowingbg.achievements.R
 import com.bzahov.rowingbg.achievements.RowingBGApplication.Companion.getAppString
+import com.bzahov.rowingbg.achievements.data.repositories.UserAuthRepository
+import com.bzahov.rowingbg.achievements.utils.IntentUtils.Companion.startLoginActivity
 
-class ProfileViewModel : ViewModel() {
+class ProfileViewModel(
+    private val repository: UserAuthRepository
+) : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is Profile Fragment"
@@ -30,11 +33,8 @@ class ProfileViewModel : ViewModel() {
     val lastName: LiveData<String> = _userLastName
     val email: LiveData<String> = _email
 
-    fun onClick(v : View){
-        Log.e("Profile", (v.id == R.id.goToProfile).toString())
-    }
-
-    fun logOut() {
-        Log.e("Profile", "LogOut")
+    fun logout(view: View){
+        repository.logout()
+        view.context.startLoginActivity()
     }
 }

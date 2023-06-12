@@ -6,13 +6,15 @@
     <string name="navigation_text_3">Постижения</string>
     <string name="navigation_text_4">Моят Клуб</string>
     <string name="navigation_text_5">Профил</string>
-    <string name="don_t_have_an_account_register_here">Нямате акаунт? Регистрирайте се тук</string>
+    <string name="don_t_have_an_account_register_here"><u>Нямате акаунт? Регистрирайте се тук</u></string>
+    <string name="auth_already_have_an_account"><u>Имате акаунт? Впишете се тук</u></string>
+
     <string name="auth_password">Парола</string>
     <string name="auth_email">Имейл</string>
     <string name="auth_forgot_password">Забравена Парола?</string>
     <string name="auth_log_in">Вписване</string>
     <string name="auth_sign_up">Регистрирай се</string>
-    <string name="auth_already_have_an_account">Имате акаунт? Впишете се тук</string>
     <string name="user_type_athlete">Състезател</string>
     <string name="profileNavigationProfile">Profile</string>
+    <string name="hint_bfg">Bulgarian Rowing Federation Logo</string>
 </resources>

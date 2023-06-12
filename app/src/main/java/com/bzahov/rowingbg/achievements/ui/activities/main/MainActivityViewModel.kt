@@ -1,6 +1,7 @@
 package com.bzahov.rowingbg.achievements.ui.activities.main
 
-import android.view.View
+import android.content.Context
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.bzahov.rowingbg.achievements.data.repositories.UserAuthRepository
 
@@ -12,8 +13,9 @@ class MainActivityViewModel(
         repository.currentUser()
     }
 
-    fun logout(view: View) {
+    fun logout(context: Context) {
+        Log.e("ss","ss")
         repository.logout()
-//        view.context.startLoginActivity()
+//        context.startLoginActivity()
     }
 }

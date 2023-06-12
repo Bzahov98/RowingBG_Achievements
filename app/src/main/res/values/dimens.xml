@@ -16,6 +16,7 @@
 
     <!--    Card Views -->
     <dimen name="card_rounded_corners">20dp</dimen>
+    <dimen name="button_rounded_corners">20dp</dimen>
 
     <!-- Paddings and Margins. -->
     <dimen name="padding_and_margin_next_day_negative">-4dp</dimen>

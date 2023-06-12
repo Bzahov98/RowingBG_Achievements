@@ -22,8 +22,10 @@ class SignUpActivity : AppCompatActivity(), AuthListener, KodeinAware {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivitySignUpBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
         viewModel = ViewModelProvider(this, factory)[AuthViewModel::class.java]
 
         binding.viewModel = viewModel

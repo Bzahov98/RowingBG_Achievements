@@ -1,6 +1,7 @@
 package com.bzahov.rowingbg.achievements.ui.activities.main
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -9,6 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bzahov.rowingbg.achievements.R
 import com.bzahov.rowingbg.achievements.databinding.ActivityMainBinding
+import com.bzahov.rowingbg.achievements.utils.IntentUtils.Companion.startLoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.closestKodein
@@ -16,7 +18,10 @@ import org.kodein.di.generic.instance
 
 class MainActivity : AppCompatActivity(), KodeinAware {
     override val kodein by closestKodein()
+
     private val factory: MainActivityViewModelFactory by instance()
+    private val vm: MainActivityViewModel by instance()
+
 //    private lateinit var viewModel: MainActivityViewModel
 
     private lateinit var binding: ActivityMainBinding
@@ -26,13 +31,27 @@ class MainActivity : AppCompatActivity(), KodeinAware {
 
         setUpBinding()
         setUpNavigation()
+        setUpViews()
+    }
+
+
+    private fun setUpViews() {
+
+        binding.viewModel?.let {
+            // Checking is user logged in
+            if (it.user == null) {
+                Toast.makeText(this, "s", Toast.LENGTH_SHORT).show()
+                startLoginActivity()
+            }
+        }
     }
 
     private fun setUpBinding() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.viewModel = ViewModelProvider(this, factory)[MainActivityViewModel::class.java]
-        //        binding.viewModel = viewModel
+        binding.viewModel =
+            ViewModelProvider(this, factory)[MainActivityViewModel::class.java]
+//        binding.viewModel = viewModel
     }
 
     private fun setUpNavigation() {
