@@ -22,8 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.auth.SignUpActivity" />
-        <activity android:name=".ui.activities.auth.LoginActivity" />
+        <activity
+            android:name=".ui.activities.auth.SignUpActivity"
+            android:theme="@style/Theme.RowingBGAchievements.NoActionBar" />
+        <activity
+            android:name=".ui.activities.auth.LoginActivity"
+            android:theme="@style/Theme.RowingBGAchievements.NoActionBar" />
     </application>
 
 </manifest>

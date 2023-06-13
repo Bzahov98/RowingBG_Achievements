@@ -11,7 +11,7 @@
 
     </data>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_color"
@@ -19,43 +19,52 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         tools:context=".ui.activities.auth.LoginActivity">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ImageView
+            android:id="@+id/bfgLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_above="@+id/login_title"
+            android:contentDescription="@string/hint_bfg"
+            android:gravity="center_horizontal"
+            android:onClick="@{(v)->viewModel.openRowingBgSite(v)}"
+            android:src="@drawable/logo_bfg_transparent"
+            app:layout_constraintBottom_toTopOf="@+id/login_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/login_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/auth_login_title"
+            android:textColor="@color/text_color_on_accent"
+            android:textSize="@dimen/text_size_expanded_title"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/loginLayout"
+            app:layout_constraintEnd_toEndOf="@+id/bfgLogo"
+            app:layout_constraintStart_toStartOf="@+id/bfgLogo" />
+
+        <RelativeLayout
             android:id="@+id/loginLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
+            android:layout_centerInParent="true"
+            android:layout_marginTop="100dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/bfgLogo"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:contentDescription="@string/hint_bfg"
-                android:gravity="center_horizontal"
-                android:onClick="@{(v)->viewModel.openRowingBgSite(v)}"
-                android:src="@drawable/logo_bfg_transperent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/login_title"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Account Login"
-                android:textColor="#fff"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/materialCardView"
-                app:layout_constraintStart_toStartOf="@+id/materialCardView"
-                app:layout_constraintTop_toBottomOf="@id/bfgLogo" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView"
                 style="@style/ProfileCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/login_title">
+                android:layout_centerHorizontal="true">
 
                 <RelativeLayout
                     android:id="@+id/relativeLayout"
@@ -65,77 +74,97 @@
                     android:background="#fff"
                     android:elevation="4dp"
                     android:orientation="vertical"
-                    android:padding="20dp"
+                    android:padding="@dimen/padding_and_margin_bigger"
                     app:layout_constraintTop_toBottomOf="@+id/login_title">
 
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:paddingTop="30dp">
-
+                        android:paddingTop="@dimen/padding_and_margin_small">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:labelFor="@id/textEmail"
-                            android:text="@string/auth_email" />
+                            android:text="@string/auth_email"
+                            android:visibility="gone" />
 
-                        <EditText
-                            android:id="@+id/textEmail"
-                            android:layout_width="fill_parent"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textEmailLayout"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
-                            android:drawableStart="@drawable/ic_email"
-                            android:drawablePadding="10dp"
-                            android:hint="@string/auth_hint_email"
-                            android:inputType="textEmailAddress"
-                            android:singleLine="true"
-                            android:text="@={viewModel.email}" />
+                            android:autofillHints="emailAddress"
+                            app:errorIconTint="@color/text_color_error"
+                            app:startIconDrawable="@drawable/ic_email">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/emailText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:autofillHints="emailAddress"
+                                android:hint="@string/auth_email"
+                                android:inputType="textEmailAddress"
+                                android:text="@={viewModel.email}"
+                                android:textColor="@color/text_color_accent" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
                             android:labelFor="@id/editPassword"
-                            android:text="@string/auth_password" />
+                            android:text="@string/auth_password"
+                            android:visibility="gone" />
 
-                        <EditText
-                            android:id="@+id/editPassword"
-                            android:layout_width="fill_parent"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textPasswordLayout"
+                            style="@style/EditTextStyle"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableStart="@drawable/ic_lock"
-                            android:drawablePadding="10dp"
-                            android:hint="@string/auth_password"
-                            android:inputType="textPassword"
-                            android:singleLine="true"
-                            android:text="@={viewModel.password}" />
+                            android:layout_marginTop="@dimen/padding_and_margin_small"
+                            app:errorIconTint="@color/text_color_error"
+                            app:passwordToggleEnabled="true"
+                            app:startIconDrawable="@drawable/ic_lock">
 
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/passwordText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/auth_password"
+                                android:inputType="textPassword"
+                                android:text="@={viewModel.password}"
+                                android:textColor="@color/text_color_accent" />
 
-                        <TextView
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/text_view_forget_password"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
-                            android:paddingTop="5dp"
-                            android:text="@string/auth_forgot_password" />
-
+                            android:layout_marginTop="-8dp"
+                            android:layout_marginEnd="@dimen/padding_and_margin_standard"
+                            android:text="@string/auth_forgot_password"
+                            android:textColor="@color/text_color_accent" />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/button_sign_in"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="22dp"
-                            app:cornerRadius="@dimen/button_rounded_corners"
+                            android:layout_margin="@dimen/padding_and_margin_big"
                             android:onClick="@{() -> viewModel.login()}"
                             android:text="@string/auth_log_in"
                             android:textAllCaps="false"
-                            android:textColor="#fff"
                             android:textSize="@dimen/button_text_size"
-                            app:backgroundTint="@color/background_color" />
+                            app:backgroundTint="@color/background_color"
+                            app:cornerRadius="@dimen/button_rounded_corners" />
 
-                        <TextView
+                        <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/text_view_register"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -143,8 +172,8 @@
                             android:onClick="@{(v) -> viewModel.goToSignup(v)}"
                             android:text="@string/don_t_have_an_account_register_here"
                             android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:textColor="@color/background_color" />
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="@color/text_color_accent" />
                     </LinearLayout>
 
                 </RelativeLayout>
@@ -161,14 +190,19 @@
             <!--                android:elevation="4dp"-->
             <!--                android:src="@drawable/ic_boy"/>-->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
 
         <ProgressBar
             android:id="@+id/progressbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:visibility="gone" />
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginLayout"
+            tools:visibility="visible" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

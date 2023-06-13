@@ -2,6 +2,7 @@ package com.bzahov.rowingbg.achievements.ui.activities.auth
 
 import android.content.Intent
 import android.view.View
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bzahov.rowingbg.achievements.data.repositories.UserAuthRepository
 import com.bzahov.rowingbg.achievements.utils.InternetBrowserUtils.Companion.openNewTabWindow
@@ -13,6 +14,10 @@ import io.reactivex.schedulers.Schedulers
 class AuthViewModel(
     private val repository: UserAuthRepository
 ) : ViewModel() {
+
+    private val userEmail = MutableLiveData("")
+
+    private val userPass = MutableLiveData("")
 
     //email and password for the input
     var email: String? = null
@@ -34,7 +39,7 @@ class AuthViewModel(
 
         trimSpaces()
         //validating email and password
-        if (isValidLoginData(email, password)) {
+        if (!isValidLoginData(email, password)) {
             authListener?.onFailure("Invalid email or password")
             return
         }
