@@ -150,6 +150,7 @@
                             android:layout_marginTop="-8dp"
                             android:layout_marginEnd="@dimen/padding_and_margin_standard"
                             android:text="@string/auth_forgot_password"
+                            android:onClick="@{() -> viewModel.onForgotPassword()}"
                             android:textColor="@color/text_color_accent" />
 
                         <com.google.android.material.button.MaterialButton

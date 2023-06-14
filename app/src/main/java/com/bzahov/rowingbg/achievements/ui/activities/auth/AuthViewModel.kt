@@ -1,15 +1,18 @@
 package com.bzahov.rowingbg.achievements.ui.activities.auth
 
-import android.content.Intent
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.bzahov.rowingbg.achievements.data.model.User
+import com.bzahov.rowingbg.achievements.data.model.UserData
+import com.bzahov.rowingbg.achievements.data.model.UserRoleEnum
 import com.bzahov.rowingbg.achievements.data.repositories.UserAuthRepository
+import com.bzahov.rowingbg.achievements.utils.IntentUtils.Companion.startLoginActivityNoAnim
+import com.bzahov.rowingbg.achievements.utils.IntentUtils.Companion.startSignUpActivityNoAnim
 import com.bzahov.rowingbg.achievements.utils.InternetBrowserUtils.Companion.openNewTabWindow
 import com.bzahov.rowingbg.achievements.utils.ValidationUtils.Companion.isValidLoginData
-import io.reactivex.android.schedulers.AndroidSchedulers
+import com.bzahov.rowingbg.achievements.utils.ValidationUtils.Companion.isValidRegisterData
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 
 class AuthViewModel(
     private val repository: UserAuthRepository
@@ -22,6 +25,7 @@ class AuthViewModel(
     //email and password for the input
     var email: String? = null
     var password: String? = null
+    var username: String? = null
 
     //auth listener
     var authListener: AuthListener? = null
@@ -48,16 +52,7 @@ class AuthViewModel(
         authListener?.onStarted()
 
         //calling login from repository to perform the actual authentication
-        val disposable = repository.login(email!!, password!!)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                //sending a success callback
-                authListener?.onSuccess()
-            }, {
-                //sending a failure callback
-                authListener?.onFailure(it.message!!)
-            })
+        val disposable = repository.login(email!!, password!!, authListener)
 
         disposables.add(disposable)
     }
@@ -65,30 +60,39 @@ class AuthViewModel(
 
     //Doing same thing with signup
     fun signup() {
-        if (email.isNullOrEmpty() || password.isNullOrEmpty()) {
-            authListener?.onFailure("Please input all values")
+        if (!isValidRegisterData(email, password, username)) {
+            authListener?.onFailure("Please input all values correctly")
             return
         }
         authListener?.onStarted()
-        val disposable = repository.register(email!!, password!!, authListener)
+        val disposable = repository.register(
+            User(
+                null, name = null, email, username,
+                UserData(),
+                UserRoleEnum.ADMIN
+            ),
+            password!!,
+            authListener
+        )
 
         disposables.add(disposable)
     }
 
+    fun onForgotPassword() {
+        // TODO showDialog onForgotPassword
+    }
+
     fun goToLogin(view: View) {
-        Intent(view.context, LoginActivity::class.java).also {
-            view.context.startActivity(it)
-        }
+        view.context.startLoginActivityNoAnim()
     }
 
     fun goToSignup(view: View) {
-        Intent(view.context, SignUpActivity::class.java).also {
-            view.context.startActivity(it)
-        }
+        view.context.startSignUpActivityNoAnim()
     }
 
-    fun trimSpaces() {
-        email?.trim()
+    private fun trimSpaces() {
+        email = email?.trim()
+        username = username?.trim()
     }
 
     //disposing the disposables
@@ -100,5 +104,9 @@ class AuthViewModel(
     fun openRowingBgSite(v: View) {
         v.context.openNewTabWindow("http://rowingbulgaria.com")
     }
+
+    fun isLoggedIn(): Boolean =
+        repository.currentUser() != null
+
 
 }

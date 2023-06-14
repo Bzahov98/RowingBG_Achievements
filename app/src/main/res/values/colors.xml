@@ -13,4 +13,6 @@
     <color name="text_color_accent">#008577</color>
     <color name="text_color_error">#7E0000</color>
     <color name="text_color_on_accent">@color/white</color>
+    <!--Icons-->
+    <color name="color_tint_icons">#000000</color>
 </resources>

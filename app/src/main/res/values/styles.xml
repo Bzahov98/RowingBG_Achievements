@@ -70,6 +70,10 @@
 
     </style>
 
+    <style name="EditTextStyle.Dense" parent="EditTextStyle">
+        <item name="textInputFilledDenseStyle">@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense</item>
+    </style>
+
     <style name="AccentTextAppearance" parent="TextAppearance.AppCompat">
 
     </style>

@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bzahov.rowingbg.achievements.databinding.ActivitySignUpBinding
 import com.bzahov.rowingbg.achievements.ui.activities.main.MainActivity
+import com.bzahov.rowingbg.achievements.utils.IntentUtils.Companion.startMainActivity
+import com.bzahov.rowingbg.achievements.utils.ToastUtils.Companion.showToastWithMsg
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.closestKodein
 import org.kodein.di.generic.instance
@@ -18,7 +20,7 @@ class SignUpActivity : AppCompatActivity(), AuthListener, KodeinAware {
     private val factory : AuthViewModelFactory by instance()
     private lateinit var binding: ActivitySignUpBinding
 
-    private lateinit var viewModel: AuthViewModel
+    private lateinit var authViewModel: AuthViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +28,11 @@ class SignUpActivity : AppCompatActivity(), AuthListener, KodeinAware {
 
         setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this, factory)[AuthViewModel::class.java]
+        authViewModel = ViewModelProvider(this, factory)[AuthViewModel::class.java]
 
-        binding.viewModel = viewModel
+        binding.viewModel = authViewModel
 
-        viewModel.authListener = this
+        authViewModel.authListener = this
     }
 
     override fun onStarted() {
@@ -41,13 +43,21 @@ class SignUpActivity : AppCompatActivity(), AuthListener, KodeinAware {
         }
     }
 
-    override fun onSuccess() {
+    override fun onSuccess(message: String) {
         binding.progressbar.visibility = View.GONE
-//        startHomeActivity()
+        this.showToastWithMsg(message)
+        navigateToMainActivity()
     }
 
     override fun onFailure(message: String) {
         binding.progressbar.visibility = View.GONE
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun navigateToMainActivity() {
+        if (authViewModel.isLoggedIn()) {
+            this.startMainActivity()
+            finish()
+        }
     }
 }

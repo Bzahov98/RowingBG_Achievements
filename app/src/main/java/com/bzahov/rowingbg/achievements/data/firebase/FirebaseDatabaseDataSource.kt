@@ -8,10 +8,21 @@ class FirebaseDatabaseDataSource {
         FirebaseDatabase.getInstance()
     }
     val reference
-        get() = firebaseDatabase.reference
+        get() = firebaseDatabase.reference.database.reference
 
+    //old
     fun writeNewUser(userId: String, email: String?, name: String = "") {
-        val user = User(userId, name, email)
-        reference.child("users").child(userId).setValue(user)
+        val user = User(userId, name, email, null,)
+        reference.child("users").apply {
+            child(userId).setValue(user)
+        }
+    }
+
+    fun writeNewUserWithData(user: User) {
+        reference.child("users").apply {
+            user.uid?.let {
+                child(it).setValue(user)
+            }
+        }
     }
 }

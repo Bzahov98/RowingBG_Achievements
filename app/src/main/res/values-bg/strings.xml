@@ -18,4 +18,8 @@
     <string name="profileNavigationProfile">Profile</string>
     <string name="hint_bfg">Bulgarian Rowing Federation Logo</string>
     <string name="auth_login_title">Account Login</string>
+    <string name="auth_sign_up_title">Регистрирай се</string>
+    <string name="auth_username">Потребителско име</string>
+    <string name="profileNavigationSettings">Настройки</string>
+    <string name="profileNavigationAdminPanel">Админ панел</string>
 </resources>

@@ -10,6 +10,7 @@
     <string name="auth_forgot_password"><u>Forgot Password?</u></string>
 
     <string name="auth_password">Password</string>
+    <string name="auth_username">Username</string>
     <string name="auth_hint_email" translatable="false">ivanIvanov@gmail.com</string>
     <string name="auth_email">Email</string>
     <string name="auth_log_in">Log in</string>
@@ -25,4 +26,5 @@
     <string name="hint_bfg">Bulgarian Rowing Federation Logo</string>
     <string name="error_invalid_email">Invalid Email!</string>
     <string name="auth_login_title">Account Login</string>
+    <string name="auth_sign_up_title">Account Registration</string>
 </resources>

@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bzahov.rowingbg.achievements.R
 import com.bzahov.rowingbg.achievements.databinding.ActivityLoginBinding
 import com.bzahov.rowingbg.achievements.utils.IntentUtils.Companion.startMainActivity
+import com.bzahov.rowingbg.achievements.utils.ToastUtils.Companion.showToastWithMsg
 import com.bzahov.rowingbg.achievements.utils.ValidationUtils.Companion.isValidEmail
 import com.bzahov.rowingbg.achievements.utils.VisibilityUtils.Companion.disappear
 import com.bzahov.rowingbg.achievements.utils.VisibilityUtils.Companion.show
@@ -19,7 +20,7 @@ class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware {
 
     override val kodein by closestKodein()
     private val factory: AuthViewModelFactory by instance()
-//    private val vm: AuthViewModel by instance()
+
     private lateinit var binding: ActivityLoginBinding
 
     private lateinit var authViewModel: AuthViewModel
@@ -42,7 +43,8 @@ class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware {
         binding.apply {
             textEmailLayout.editText?.apply {
                 doAfterTextChanged {
-                    error = if (!viewModel?.email.isValidEmail()) getString(R.string.error_invalid_email) else null
+                    error =
+                        if (!viewModel?.email.isValidEmail()) getString(R.string.error_invalid_email) else null
                 }
             }
         }
@@ -52,8 +54,10 @@ class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware {
         binding.progressbar.show()
     }
 
-    override fun onSuccess() {
+    override fun onSuccess(message: String) {
         binding.progressbar.disappear()
+        this.showToastWithMsg(message)
+
         navigateToMainActivity()
     }
 
@@ -64,12 +68,26 @@ class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware {
 
     override fun onStart() {
         super.onStart()
-        authViewModel.user?.let {
-            navigateToMainActivity()
-        }
+        navigateToMainActivity()
+
+    }
+
+    override fun onRestart() {
+        navigateToMainActivity()
+
+        super.onRestart()
+    }
+    override fun onResume() {
+        navigateToMainActivity()
+
+        super.onResume()
     }
 
     private fun navigateToMainActivity() {
-        this@LoginActivity.startMainActivity()
+        if (authViewModel.isLoggedIn()) {
+
+            this@LoginActivity.startMainActivity()
+            finish()
+        }
     }
 }

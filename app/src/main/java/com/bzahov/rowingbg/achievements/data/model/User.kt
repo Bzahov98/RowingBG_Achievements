@@ -4,10 +4,15 @@ import com.google.firebase.database.Exclude
 import com.google.firebase.database.IgnoreExtraProperties
 
 @IgnoreExtraProperties
-class User  {
-    var uid: String? = null
-    var name: String? = null
-    var email: String? = null
+class User(
+    var uid: String?,
+    var name: String?,
+    var email: String?,
+    var username: String?,
+    var userData: UserData? = null,
+    var userRole: UserRoleEnum? = null,
+) {
+
 
     @Exclude
     var isAuthenticated = false
@@ -18,10 +23,11 @@ class User  {
     @Exclude
     var isCreated = false
 
-    constructor() {}
-    internal constructor(uid: String?, name: String?, email: String?) {
-        this.uid = uid
-        this.name = name
-        this.email = email
-    }
+    constructor() : this("", "", "", "",null,null)
+//    internal constructor(uid: String?, name: String?, email: String?, username: String?) {
+//        this.uid = uid
+//        this.name = name
+//        this.email = email
+//        this.username = username
+//    }
 }
