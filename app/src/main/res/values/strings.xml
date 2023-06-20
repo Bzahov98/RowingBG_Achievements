@@ -1,30 +1,54 @@
 <resources>
     <string name="app_name">RowingBG Achievements</string>
-    <string name="navigation_text_1">Feed</string>
-    <string name="navigation_text_2">Calendar</string>
-    <string name="navigation_text_3">Achievements</string>
-    <string name="navigation_text_4">My Club</string>
-    <string name="navigation_text_5">Profile</string>
-    <string name="don_t_have_an_account_register_here"><u>Don\'t have an account.\n<b>Register Here</b></u></string>
-    <string name="auth_already_have_an_account"><u>Already have an account.\n<b>Login Here</b></u></string>
-    <string name="auth_forgot_password"><u>Forgot Password?</u></string>
 
-    <string name="auth_password">Password</string>
-    <string name="auth_username">Username</string>
-    <string name="auth_hint_email" translatable="false">ivanIvanov@gmail.com</string>
-    <string name="auth_email">Email</string>
+    <string name="title_feed">Feed</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_achievements">Achievements</string>
+    <string name="title_club">My Club</string>
+    <string name="title_profile">Profile</string>
+
+
+    // Navigation
+    <string name="navigation_text_1" translatable="false">@string/title_feed</string>
+    <string name="navigation_text_2" translatable="false">@string/title_calendar</string>
+    <string name="navigation_text_3" translatable="false">@string/title_achievements</string>
+    <string name="navigation_text_4" translatable="false">@string/title_club</string>
+    <string name="navigation_text_5" translatable="false">@string/title_profile</string>
+
+    // Auth
+    <string name="auth_login_title">Account Login</string>
+    <string name="auth_sign_up_title">Account Registration</string>
     <string name="auth_log_in">Log in</string>
     <string name="auth_sign_up">Sign Up</string>
-    <string name="user_type_athlete">ATHLETE</string>
+    <string name="auth_log_out">Log Out</string>
 
+
+    /// Forms
+    <string name="auth_password">Password</string>
+    <string name="auth_username">Username</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_hint_email" translatable="false">ivanIvanov@gmail.com</string>
+
+    ///
+    <string name="auth_already_have_an_account"><u>Already have an account.\n<b>Login Here</b></u></string>
+    <string name="auth_don_t_have_an_account_register_here"><u>Don\'t have an account.\n<b>Register Here</b></u></string>
+    <string name="auth_forgot_password"><u>Forgot Password?</u></string>
+
+    // User Types
+    <string name="user_type_athlete">ATHLETE</string>
+    <string name="user_type_watcher">WATCHER</string>
+    <string name="user_type_admin">ADMIN</string>
+
+
+    // Profile
     <string name="profileNavigationProfile">Profile</string>
     <string name="profileNavigationSettings">Settings</string>
     <string name="profileNavigationAdminPanel">Admin Panel</string>
     <string name="profileNavigationInviteFriends">Invite Friends &amp; Share</string>
     <string name="profileNavigationRateUs">Rate Us</string>
     <string name="profileNavigationAbout">About app</string>
-    <string name="hint_bfg">Bulgarian Rowing Federation Logo</string>
+    <string name="hint_bfg_logo">Bulgarian Rowing Federation Logo</string>
+
+    // Errors
     <string name="error_invalid_email">Invalid Email!</string>
-    <string name="auth_login_title">Account Login</string>
-    <string name="auth_sign_up_title">Account Registration</string>
 </resources>

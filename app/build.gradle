@@ -70,8 +70,8 @@ dependencies {
 
     // fragments
     implementation "androidx.fragment:fragment-ktx:1.6.0"
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
     // Material Icons
     implementation "androidx.compose.material:material-icons-extended:1.4.3"
@@ -91,8 +91,7 @@ dependencies {
 
     implementation "androidx.core:core-ktx:1.10.1"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
-
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"
 
     // icon library
     implementation 'net.steamcrafted:materialiconlib:1.1.1'

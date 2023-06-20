@@ -1,7 +1,9 @@
 package com.bzahov.rowingbg.achievements.data.model
 
 import com.google.firebase.database.Exclude
-import com.google.firebase.database.IgnoreExtraProperties
+import com.google.firebase.firestore.IgnoreExtraProperties
+import com.google.firebase.firestore.ServerTimestamp
+import java.sql.Timestamp
 
 @IgnoreExtraProperties
 class User(
@@ -11,6 +13,8 @@ class User(
     var username: String?,
     var userData: UserData? = null,
     var userRole: UserRoleEnum? = null,
+//    @ServerTimestamp
+//    var timestamp: Timestamp,
 ) {
 
 
@@ -23,7 +27,7 @@ class User(
     @Exclude
     var isCreated = false
 
-    constructor() : this("", "", "", "",null,null)
+    constructor() : this("", "", "", "", null, null)
 //    internal constructor(uid: String?, name: String?, email: String?, username: String?) {
 //        this.uid = uid
 //        this.name = name

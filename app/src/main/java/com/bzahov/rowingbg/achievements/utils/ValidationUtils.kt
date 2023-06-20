@@ -15,7 +15,7 @@ class ValidationUtils {
         @JvmStatic
         fun String?.isValidEmail(): Boolean {
             return !this.isNullOrBlank() &&
-                    Patterns.EMAIL_ADDRESS.matcher(this).matches()
+                    Patterns.EMAIL_ADDRESS.matcher(this.trim()).matches()
         }
 
         @JvmStatic
@@ -38,5 +38,3 @@ class ValidationUtils {
         }
     }
 }
-
-

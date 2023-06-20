@@ -40,7 +40,6 @@ class AuthViewModel(
 
     //function to perform login
     fun login() {
-
         trimSpaces()
         //validating email and password
         if (!isValidLoginData(email, password)) {
@@ -60,6 +59,7 @@ class AuthViewModel(
 
     //Doing same thing with signup
     fun signup() {
+        trimSpaces()
         if (!isValidRegisterData(email, password, username)) {
             authListener?.onFailure("Please input all values correctly")
             return

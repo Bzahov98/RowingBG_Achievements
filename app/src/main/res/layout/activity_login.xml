@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_above="@+id/login_title"
-            android:contentDescription="@string/hint_bfg"
+            android:contentDescription="@string/hint_bfg_logo"
             android:gravity="center_horizontal"
             android:onClick="@{(v)->viewModel.openRowingBgSite(v)}"
             android:src="@drawable/logo_bfg_transparent"
@@ -171,7 +171,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:onClick="@{(v) -> viewModel.goToSignup(v)}"
-                            android:text="@string/don_t_have_an_account_register_here"
+                            android:text="@string/auth_don_t_have_an_account_register_here"
                             android:textAlignment="center"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
                             android:textColor="@color/text_color_accent" />

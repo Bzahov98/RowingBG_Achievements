@@ -118,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:onClick="@{(v) -> viewModel.goToSignup(v)}"
-                        android:text="@string/don_t_have_an_account_register_here"
+                        android:text="@string/auth_don_t_have_an_account_register_here"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
                 </LinearLayout>

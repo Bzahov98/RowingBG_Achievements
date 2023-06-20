@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat
 import com.bzahov.rowingbg.achievements.ui.activities.auth.LoginActivity
-import com.bzahov.rowingbg.achievements.ui.activities.auth.SignUpActivity
+import com.bzahov.rowingbg.achievements.ui.activities.auth.signUp.SignUpActivity
 import com.bzahov.rowingbg.achievements.ui.activities.main.MainActivity
 
 class IntentUtils {

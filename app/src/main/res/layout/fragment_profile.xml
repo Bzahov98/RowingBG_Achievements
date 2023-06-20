@@ -281,7 +281,7 @@
                 android:id="@+id/logOutFab"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:text="Log Out"
+                android:text="@string/auth_log_out"
                 android:textStyle="bold"
                 android:layout_marginTop="@dimen/padding_and_margin_big"
                 android:layout_marginBottom="@dimen/padding_and_margin_bottom_sheet"

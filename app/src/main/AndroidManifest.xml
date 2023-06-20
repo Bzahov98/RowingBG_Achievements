@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activities.auth.SignUpActivity"
+            android:name=".ui.activities.auth.signUp.SignUpActivity"
             android:theme="@style/Theme.RowingBGAchievements.NoActionBar" />
         <activity
             android:name=".ui.activities.auth.LoginActivity"

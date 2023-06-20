@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_above="@+id/signUpTitle"
-            android:contentDescription="@string/hint_bfg"
+            android:contentDescription="@string/hint_bfg_logo"
             android:gravity="center_horizontal"
             android:onClick="@{(v)->viewModel.openRowingBgSite(v)}"
             android:src="@drawable/logo_bfg_transparent"

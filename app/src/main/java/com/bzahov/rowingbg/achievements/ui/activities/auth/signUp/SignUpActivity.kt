@@ -1,4 +1,4 @@
-package com.bzahov.rowingbg.achievements.ui.activities.auth
+package com.bzahov.rowingbg.achievements.ui.activities.auth.signUp
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bzahov.rowingbg.achievements.databinding.ActivitySignUpBinding
+import com.bzahov.rowingbg.achievements.ui.activities.auth.AuthListener
+import com.bzahov.rowingbg.achievements.ui.activities.auth.AuthViewModel
+import com.bzahov.rowingbg.achievements.ui.activities.auth.AuthViewModelFactory
 import com.bzahov.rowingbg.achievements.ui.activities.main.MainActivity
 import com.bzahov.rowingbg.achievements.utils.IntentUtils.Companion.startMainActivity
 import com.bzahov.rowingbg.achievements.utils.ToastUtils.Companion.showToastWithMsg
